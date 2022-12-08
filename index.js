@@ -1,13 +1,18 @@
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.info = function() {
-        return `${title} by ${author}, ${pages} pages, ${read}`;
-    }
+function Student () {
+
 }
 
-let theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', 295, 'not read yet');
+Student.prototype.sayName = function () {
+    console.log(this.name);
+}
 
-console.log(theHobbit.info());
+function EighthGrader (name) {
+    this.name = name
+    this.grade = 8
+}
+
+EighthGrader.prototype = Object.create(Student.prototype)
+
+const carl = new EighthGrader('Carl')
+carl.sayName() // Carl
+carl.grade // 8
