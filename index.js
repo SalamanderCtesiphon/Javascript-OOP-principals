@@ -1,15 +1,13 @@
-let user = {
-  get fullName() {
-    return `${this.firstName} ${this.lastName}`;
-  },
-
-  set fullName(value) {
-    [this.firstName, this.lastName] = value.split(' ');
+class User {
+  constructor(name) {
+    this.name = name;
   }
+
+  sayHi() {
+    console.log(this.name);
+  }
+
 }
 
-user.fullName = "John Smith";
-
-console.log(user.firstName); // John
-console.log(user.lastName); // Smith
-console.log(user.fullName); // John Smith
+let user = new User("John");
+user.sayHi();
