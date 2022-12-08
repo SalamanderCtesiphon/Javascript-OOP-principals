@@ -1,10 +1,15 @@
-let a = 1;
+let user = {
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  },
 
-function foo() {
-  let a = 2;
-  return a;
+  set fullName(value) {
+    [this.firstName, this.lastName] = value.split(' ');
+  }
 }
 
-foo();
+user.fullName = "John Smith";
 
-console.log(a);
+console.log(user.firstName); // John
+console.log(user.lastName); // Smith
+console.log(user.fullName); // John Smith
