@@ -1,18 +1,10 @@
-function Student () {
+const personFactory = (name, age) => {
+    const sayHello = () => console.log(`Hello, my name is ${name}`);
+    return { name, age, sayHello };
+};
 
-}
+const jeff = personFactory('Jeff', 27);
 
-Student.prototype.sayName = function () {
-    console.log(this.name);
-}
+console.log(jeff.name); // Jeff
 
-function EighthGrader (name) {
-    this.name = name
-    this.grade = 8
-}
-
-EighthGrader.prototype = Object.create(Student.prototype)
-
-const carl = new EighthGrader('Carl')
-carl.sayName() // Carl
-carl.grade // 8
+jeff.sayHello(); // Hello, my name is Jeff
