@@ -1,11 +1,11 @@
-function PrintStuff(myDocuments) {
-    this.documents = myDocuments;
-}
+/* let user = {};
 
-PrintStuff.prototype.print = function() {
-    console.log(this.documents);
-}
+user.name = 'John';
+user.surname = "Smith";
+user.name = 'Pete';
 
-const newObj = new PrintStuff("I am a new Object and I can print.");
+console.log(user.name);
 
-newObj.print(); //I am a new Object and I can print.
+delete user.name;
+
+console.log(user.name); */
